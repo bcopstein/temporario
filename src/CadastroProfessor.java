@@ -17,13 +17,48 @@ public class CadastroProfessor {
         }
     }
 
+    public int quantidade(){
+        return index;
+    }
+
     // Acrescentar método para imprimir todos os professores
+    public void imprimeProfessores(){
+        for(int i=0; i<index; i++){
+            System.out.println(grupo[i].toString());
+        }
+    }
 
     // Acrescentar método para retornar o professor com o número de matrícula informado
+    public Professor getProfessor(int matricula){
+        for(Professor prof:grupo){
+            if (prof.getMatricula() == matricula){
+                return prof;
+            }
+        }
+        return null;
+    }
 
     // Acrescentar método para somar a carga horária dos professores
+    public int somaCargasHorarias(){
+        int soma = 0;
+        for(int i=0; i<index; i++){
+            soma = soma + grupo[i].getHoras();
+        }
+        return soma;
+        //for(Professor prof:grupo){
+        //    soma = soma + prof.getHoras();
+        //}
+    }
 
     // Acrescentar método para retornar o somatório do salário dos professores
+    public double somaSalarios(){
+        double soma = 0;
+        for(Professor prof:grupo){
+            double salario = prof.getValorHora() * prof.getHoras();
+            soma += salario;
+        }
+        return soma;
+    }
 
     /*
     Exercícios:

@@ -9,7 +9,7 @@ public class Professor {
         this.nome = nome;
         this.matricula = matricula;
         this.horas = (horas > 0 && horas < 44) ? horas : 0;
-        this.valorHora = (valorHora > 20) ? valorHora : 0;
+        this.valorHora = (valorHora > 20) ? valorHora : 20;
     }
 
     // Getters
@@ -24,7 +24,7 @@ public class Professor {
     }
 
     public void setValorHora(int novoValorHora){
-        this.valorHora = (novoValorHora > 0 && novoValorHora < 44) ? novoValorHora : this.valorHora;
+        this.valorHora = (novoValorHora > 20) ? novoValorHora : this.valorHora;
     }
 
     @Override
